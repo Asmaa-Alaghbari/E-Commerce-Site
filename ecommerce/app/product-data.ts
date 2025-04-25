@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid";
-
 export interface Product {
   id: string;
   name: string;
@@ -12,7 +10,7 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: nanoid(),
+    id: "001",
     name: "Hat",
     description: "A stylish hat to keep you cool in the sun.",
     price: 19.99,
@@ -21,7 +19,7 @@ export const products: Product[] = [
     stock: 100,
   },
   {
-    id: nanoid(),
+    id: "002",
     name: "Shirt",
     description: "A comfortable cotton shirt.",
     price: 29.99,
@@ -30,7 +28,7 @@ export const products: Product[] = [
     stock: 50,
   },
   {
-    id: nanoid(),
+    id: "003",
     name: "Mug",
     description: "A ceramic mug for your favorite beverage.",
     price: 9.99,
@@ -39,7 +37,7 @@ export const products: Product[] = [
     stock: 200,
   },
   {
-    id: nanoid(),
+    id: "004",
     name: "Apron",
     description: "A durable apron for cooking and crafting.",
     price: 24.99,
