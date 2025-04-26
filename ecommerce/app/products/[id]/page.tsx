@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { products } from "@/app/product-data";
 import { Product } from "@/app/product-data";
+import NotFoundPage from "@/app/not-found";
 import Image from "next/image";
 
 export default function ProductDetailPage({
@@ -15,12 +16,16 @@ export default function ProductDetailPage({
   useEffect(() => {
     if (params?.id) {
       const foundProduct = products.find((p) => p.id === params.id);
-      setProduct(foundProduct ?? null); 
+      setProduct(foundProduct ?? null);
     }
   }, [params]);
 
   if (!product) {
-    return <p>Product not found.</p>;
+    return (
+      <p>
+        <NotFoundPage />
+      </p>
+    );
   }
 
   return (
