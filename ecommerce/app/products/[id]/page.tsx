@@ -1,31 +1,20 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { products } from "@/app/product-data";
-import { Product } from "@/app/product-data";
 import NotFoundPage from "@/app/not-found";
 import Image from "next/image";
 
-export default function ProductDetailPage({
+export const dynamic = "force-dynamic";
+
+export default async function ProductDetailPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const [product, setProduct] = useState<Product | null>(null);
-
-  useEffect(() => {
-    if (params?.id) {
-      const foundProduct = products.find((p) => p.id === params.id);
-      setProduct(foundProduct ?? null);
-    }
-  }, [params]);
+  const response = await fetch(
+    process.env.NEXT_PUBLIC_SITE_URL + "/api/products/" + params.id
+  );
+  const product = await response.json();
 
   if (!product) {
-    return (
-      <p>
-        <NotFoundPage />
-      </p>
-    );
+    return <NotFoundPage />;
   }
 
   return (

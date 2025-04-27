@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <nav className="bg-gray-800 shadow-md">
-      <div className="cantainer mx-auto px-4 py-3 flex justify-between item-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link
           href="/"
-          className="text-gray-300 hover:text-gray-700 cursor-pointer"
+          className="text-white hover:text-gray-300 cursor-pointer font-bold text-lg"
         >
           E-commerce
         </Link>
@@ -15,7 +15,7 @@ export default function NavBar() {
           <li>
             <Link
               href="/"
-              className="text-gray-300 hover:text-gray-700 cursor-pointer"
+              className="text-gray-300 hover:text-white cursor-pointer"
             >
               Home
             </Link>
@@ -23,7 +23,7 @@ export default function NavBar() {
           <li>
             <Link
               href="/products"
-              className="text-gray-300 hover:text-gray-700 cursor-pointer"
+              className="text-gray-300 hover:text-white cursor-pointer"
             >
               Products
             </Link>
@@ -31,7 +31,7 @@ export default function NavBar() {
           <li>
             <Link
               href="/cart"
-              className="text-gray-300 hover:text-gray-700 cursor-pointer"
+              className="text-gray-300 hover:text-white cursor-pointer"
             >
               Cart
             </Link>
@@ -39,7 +39,7 @@ export default function NavBar() {
           <li>
             <Link
               href="/checkout"
-              className="text-gray-300 hover:text-gray-700 cursor-pointer"
+              className="text-gray-300 hover:text-white cursor-pointer"
             >
               Checkout
             </Link>
